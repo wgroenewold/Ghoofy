@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    {
+      "type": "image",
+      "image_url": "https://media.giphy.com/media/GeuithSoPUCB2/source.gif",
+      "alt_text": "Ah-hyuck!"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "Ah-hyuck! :wave: Ik ben Ghoofy, de talentexpert van GH+O. Ik vertel je over de laatste wijzigingen in rolbezetting en help je verder je talent te ontwikkelen. \n\nZe zeggen dat je altijd leert van je fouten. Aangezien ik zoveel klungel, moet ik wel een expert zijn! :see_no_evil: \n \n *Installeer me snel naast mijn vriend Marvin en blijf altijd op de hoogte van de ontwikkelingen rondom rollen!* :kissing_heart:"
+      }
+    }
+  ]
+}

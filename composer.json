@@ -1,0 +1,18 @@
+{
+    "name": "wouter/ghoofy",
+    "description": "They say we learn from our mistakes. That's why I'm making as many as possible. I'll soon be a genius!",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^6.5",
+        "vlucas/phpdotenv": "^5.0",
+        "catfan/medoo": "^1.7",
+        "ext-json": "^1.6"
+    },
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "wgroenwold",
+            "email": "wouter@gho.nl"
+        }
+    ]
+}
