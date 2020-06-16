@@ -1,7 +1,7 @@
 # Ghoofy
 #### Slackbot to manage talent.
 
-![Goofy inspecting](xxx.gif "Goofy inspecting")
+![Goofy inspecting](https://github.com/wgroenewold/Ghoofy/blob/master/readme_assets/header.gif?raw=true "Goofy inspecting")
 
 *"They say we learn from our mistakes. That's why I'm making as many as possible. I'll soon be a genius!"*
 
@@ -23,11 +23,11 @@
 - Send message when roles change
 
 ## Screenshots?
-![Ghoofy - Admin page](xxx.png "Ghoofy - Admin page")
+![Ghoofy - Admin page](https://github.com/wgroenewold/Ghoofy/blob/master/readme_assets/admin.png?raw=true "Ghoofy - Admin page")
 
-![Ghoofy - Home](xxx.png "Ghoofy - Home")
+![Ghoofy - Home](https://github.com/wgroenewold/Ghoofy/blob/master/readme_assets/home.png?raw=true "Ghoofy - Home")
 
-![Ghoofy  - Message example](xxx.png "Ghoofy - Message example")
+![Ghoofy  - Message example](https://github.com/wgroenewold/Ghoofy/blob/master/readme_assets/message.png?raw=true "Ghoofy - Message example")
 
 ## Someday
 - Message input to personal blog.
