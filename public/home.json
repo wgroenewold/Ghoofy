@@ -1,6 +1,4 @@
-{
-  "type": "home",
-  "blocks": [
+[
     {
       "type": "image",
       "image_url": "https://media.giphy.com/media/GeuithSoPUCB2/source.gif",
@@ -13,5 +11,4 @@
         "text": "Ah-hyuck! Ik ben Ghoofy, de talentexpert van GH+O. Ik vertel je over de laatste wijzigingen in rolbezetting en help je verder je talent te ontwikkelen. \n\nZe zeggen dat je altijd leert van je fouten. Aangezien ik zoveel klungel, moet ik wel een expert zijn!"
       }
     }
-  ]
-}
+]

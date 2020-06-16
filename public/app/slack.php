@@ -55,6 +55,46 @@ class ghoofy_slack{
 		return $data;
 	}
 
+	public function list_connected_users(){
+		$data = array();
+
+		$args = array(
+			'token' => $this->token,
+			'exclude_archived' => true,
+			'limit' => 1000,
+			'types' => 'im',
+			'cursor' => '',
+		);
+
+		$response = $this->get('https://slack.com/api/conversations.list', $args);
+
+		if($response && $response['ok'] == true){
+			foreach($response['channels'] as $value){
+				$data[] = $value['user'];
+			}
+
+			unset($value);
+
+			while(array_key_exists('response_metadata', $response) && $response['response_metadata']['next_cursor'] != false){
+				$args['cursor'] = $response['response_metadata']['next_cursor'];
+
+				$response = $this->get('https://slack.com/api/conversations.list', $args);
+
+				if($response && $response['ok'] == true){
+					foreach($response['channels'] as $value){
+						$data[] = $value['user'];
+					}
+
+					unset($value);
+
+					$args['cursor'] = $response['response_metadata']['next_cursor'];
+				}
+			}
+		}
+
+		return $data;
+	}
+
 	public function create_msg($balloon_txt, $blocks, $channel, $uri = false){
 		$blocks = json_decode($blocks, true);
 
@@ -62,6 +102,31 @@ class ghoofy_slack{
 			'channel' => $channel,
 			'text' => $balloon_txt,
 			'blocks' => $blocks,
+		);
+
+		if($uri){
+			if($data){
+				$msg = $this->send($uri, $data);
+				return $msg;
+			}else{
+				$this->log('Kon geen data maken, dus stuk.');
+			}
+		}else{
+			return $data;
+		}
+
+		return null;
+	}
+
+	public function create_home($blocks, $user_id, $uri = 'https://slack.com/api/views.publish'){
+		$blocks = json_decode($blocks, true);
+
+		$data = array(
+			'user_id' => $user_id,
+			'view' => array(
+				'type' => 'home',
+				'blocks' => $blocks,
+			),
 		);
 
 		if($uri){
