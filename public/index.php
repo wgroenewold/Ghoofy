@@ -1,3 +1,11 @@
+<?php
+
+require_once('ghoofy.class.php');
+
+$instance = ghoofy::instance();
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -41,20 +49,24 @@
 			<form method="POST" action="process.php">
 				<div class="form-group">
 					<label for="name">Wie?</label>
-					<select class="form-control" id="role" name="name">
-<!--						For loop here-->
+					<select class="form-control" id="name" name="name">
+                        <?php
+                            foreach($instance->slack->list_users() as $key => $value){
+                                echo '<option value="' . $key . '">' . $value  . '</option>';
+                            }
+                        ?>
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="role">Geslacht:</label>
-					<select class="form-control" id="location" name="gender">
-						<option>Man</option>
-						<option>Vrouw</option>
+					<label for="gender">Geslacht:</label>
+					<select class="form-control" id="gender" name="gender">
+						<option value="male">Man</option>
+                        <option value="female">Vrouw</option>
 					</select>
 				</div>
 				<div class="form-group">
 					<label for="role">Rol:</label>
-					<select class="form-control" id="role" name="role[]" multiple>
+					<select class="form-control" id="role" name="role">
 						<option>Boekhouder</option>
 						<option>Braintrainer</option>
 						<option>Communicatiegids</option>
@@ -80,15 +92,15 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="role">Type rol:</label>
-					<select class="form-control" id="location" name="type">
+					<label for="type">Type rol:</label>
+					<select class="form-control" id="type" name="type">
 						<option>Hoofdrol</option>
 						<option>Bijrol</option>
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="role">Weggeven of aannemen?:</label>
-					<select class="form-control" id="location" name="type">
+					<label for="direction">Weggeven of aannemen?:</label>
+					<select class="form-control" id="direction" name="direction">
 						<option>Weggeven</option>
 						<option>Aannemen</option>
 					</select>

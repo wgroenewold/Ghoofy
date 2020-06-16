@@ -1,16 +1,14 @@
-{
-  "blocks": [
-    {
+[
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "{TEXT}"
+    },
+    "accessory": {
       "type": "image",
       "image_url": "https://media.giphy.com/media/SfqJMsOvQpgnm/giphy.gif",
       "alt_text": "Gawrsh!"
-    },
-    {
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": "Gawrsh! <@U3ZB47XPE> heeft een nieuwe *hoofdrol*! Hij is nu *concepter*! Feliciteer hem snel! :tada:"
-      }
     }
-  ]
-}
+  }
+]

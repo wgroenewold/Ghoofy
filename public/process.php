@@ -1,10 +1,31 @@
 <?php
 
-//@todo hier die POST variabelen opvangen en versturen naar de menschen
+require_once('ghoofy.class.php');
 
-//list channels
-//https://slack.com/api/conversations.list?exclude_archived=true&limit=1000&types=im
+$instance = ghoofy::instance();
 
-//<@U3ZB47XPE> heeft een nieuwe bijrol. Hij is nu *strategiemaker*. Feliciteer 'm snel!
-//<@U0UU71K2L> heeft de bijrol van *studentmentor* weggegeven. Solliciteer snel!
-//<@UCK880508> heeft een nieuwe bijrol. Ze is nu *studentmentor*. Feliciteer haar snel!
+if($_POST['gender'] == 'male'){
+	$heshe = 'Hij';
+	$heshe2 = '\'m';
+}else{
+	$heshe = 'Ze';
+	$heshe2 = 'haar';
+}
+
+
+if($_POST['direction'] == 'Weggeven'){
+	$text = "<@" . $_POST['name'] ."> heeft de " . strtolower($_POST['type']) . " van *" . $_POST['role'] . "* weggegeven. Solliciteer snel!";
+	$balloon = 'Gawrsh! alweer een talent vrijgekomen!';
+}else{
+	$text = "<@" . $_POST['name'] ."> heeft een nieuwe " . strtolower($_POST['type']) . ". " . $heshe . " is nu *" . $_POST['role'] . "*. Feliciteer " . $heshe2 . " snel! :tada:";
+	$balloon = 'Gawrsh! alweer een talent ontdekt!';
+}
+
+$blocks = file_get_contents('new_role.json');
+$blocks = str_replace('{TEXT}', $text, $blocks);
+
+foreach($instance->slack->list_channels() as $item){
+	$instance->slack->create_msg($balloon, $blocks, $item, 'https://slack.com/api/chat.postMessage');
+}
+
+echo 'Danku!';
