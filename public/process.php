@@ -22,7 +22,22 @@ if($_POST['direction'] == 'Weggeven'){
 }
 
 $blocks = file_get_contents('new_role.json');
-$blocks = str_replace('{TEXT}', $text, $blocks);
+$img = array(
+	"https://media.giphy.com/media/SfqJMsOvQpgnm/giphy.gif",
+	"https://media.giphy.com/media/K6WoYzQAppQPe/giphy.gif",
+	"https://media.giphy.com/media/5YzYeVe6cEzrG/giphy.gif",
+	"https://media.giphy.com/media/Jh8iDTZmqsi40/giphy.gif",
+	"https://media.giphy.com/media/wJoDQt3uMfXW0/giphy-downsized.gif",
+	"https://media.giphy.com/media/NPKysZyYTbSY8/giphy.gif",
+	"https://media.giphy.com/media/EfZGQab74KZGM/giphy.gif",
+	"https://media.giphy.com/media/l46CpfHcFbmcJproY/giphy.gif",
+	"https://media.giphy.com/media/2wKbtCMHTVoOY/giphy.gif",
+	"https://media.giphy.com/media/UzUngol70rBVm/giphy.gif",
+	"https://media.giphy.com/media/mOUWkzFfrvvos/giphy.gif",
+);
+$img_key = array_rand($img);
+
+$blocks = str_replace(array('{TEXT}', '{IMG}'), array($text, $img[$img_key]), $blocks);
 
 $home = file_get_contents('home.json');
 

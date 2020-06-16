@@ -7,7 +7,7 @@
     },
     "accessory": {
       "type": "image",
-      "image_url": "https://media.giphy.com/media/SfqJMsOvQpgnm/giphy.gif",
+      "image_url": "{IMG}",
       "alt_text": "Gawrsh!"
     }
   }
