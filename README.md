@@ -1,11 +1,11 @@
 # Ghoofy
-#### Slackbot to manage talent.
+#### Slackbot to manage talent and role assignment.
 
 ![Goofy inspecting](https://github.com/wgroenewold/Ghoofy/blob/master/readme_assets/header.gif?raw=true "Goofy inspecting")
 
 *"They say we learn from our mistakes. That's why I'm making as many as possible. I'll soon be a genius!"*
 
-##Setup
+## Setup
 - Clone repo
 - ```composer install/update```
 - Create Slack App and get App ID
@@ -18,7 +18,7 @@
     - users:read
 - Rename ```.env.example``` to ```.env``` and fill with your settings.
 
-##Functions
+## Functions
 - Home screen to show funtionality
 - Send message when roles change
 
