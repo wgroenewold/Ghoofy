@@ -32,9 +32,6 @@
 ## Someday
 - Message input to personal blog.
 - Monthly summary on homescreen.
-<<<<<<< HEAD
 - Update Slack profile with new roles.
 - Update Rollebollen.app with new roles.
 - Update Gripp with new roles.
-=======
->>>>>>> 59056ef57bd8c6fcd170b609d52455b058fe320b
